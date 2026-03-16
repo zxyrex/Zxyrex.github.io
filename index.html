@@ -4,64 +4,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zxyrex - Unity Asset Publisher</title>
+<title>Zxyrex Studio | Unity Asset Publisher</title>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
 body{
-font-family: Arial;
-margin:0;
-background:#0f0f0f;
+background:#0e0e11;
 color:white;
+line-height:1.6;
 }
 
-header{
-background:#1c1c1c;
-padding:40px;
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#0e0e11;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+opacity:.8;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+padding:20px;
+background:linear-gradient(120deg,#111,#1b1b22);
 }
 
-header h1{
-margin:0;
-font-size:40px;
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
 }
+
+.hero p{
+font-size:20px;
+opacity:.8;
+max-width:600px;
+margin:auto;
+}
+
+.hero button{
+margin-top:30px;
+padding:15px 30px;
+border:none;
+background:#4da6ff;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#2d8cff;
+}
+
+/* SECTIONS */
 
 section{
-max-width:900px;
+padding:80px 10%;
+max-width:1200px;
 margin:auto;
-padding:40px;
 }
 
-.assets{
+section h2{
+font-size:36px;
+margin-bottom:25px;
+}
+
+/* ABOUT */
+
+.about p{
+max-width:700px;
+opacity:.8;
+}
+
+/* ASSETS */
+
+.assets-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
+margin-top:40px;
 }
 
-.card{
-background:#1c1c1c;
-padding:20px;
+.asset-card{
+background:#1a1a22;
 border-radius:10px;
+overflow:hidden;
+transition:.25s;
 }
 
-.card img{
+.asset-card:hover{
+transform:translateY(-5px);
+}
+
+.asset-card img{
 width:100%;
-border-radius:5px;
+height:170px;
+object-fit:cover;
 }
 
-.card h3{
-margin-top:10px;
+.asset-card-content{
+padding:20px;
 }
+
+.asset-card h3{
+margin-bottom:10px;
+}
+
+.asset-card p{
+font-size:14px;
+opacity:.7;
+}
+
+/* CONTACT */
+
+.contact p{
+opacity:.8;
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:30px;
-background:#1c1c1c;
-}
-
-a{
-color:#4da6ff;
-text-decoration:none;
+padding:40px;
+background:#0a0a0d;
+margin-top:60px;
+opacity:.7;
 }
 
 </style>
@@ -70,66 +174,95 @@ text-decoration:none;
 
 <body>
 
-<header>
-<h1>Zxyrex</h1>
-<p>Unity Asset Store Publisher</p>
-</header>
+<nav>
 
-<section>
+<div class="logo">Zxyrex Studio</div>
 
-<h2>About Me</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#assets">Assets</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Game-Ready Unity Assets</h1>
 
 <p>
-I create high-quality 3D characters and tools for Unity developers.
-My focus is game-ready assets optimized for performance and easy integration.
+High-quality characters and tools designed for Unity developers.
+Optimized for performance and ready for production.
+</p>
+
+<button onclick="document.getElementById('assets').scrollIntoView()">
+View Assets
+</button>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<h2>About The Studio</h2>
+
+<p>
+Zxyrex Studio creates professional 3D characters and systems for game developers.
+Our goal is to provide highly customizable assets that integrate easily into Unity
+projects while maintaining excellent performance and visual quality.
 </p>
 
 </section>
 
-<section>
+<section id="assets">
 
-<h2>Assets</h2>
+<h2>Featured Assets</h2>
 
-<div class="assets">
+<div class="assets-grid">
 
-<div class="card">
+<div class="asset-card">
 <img src="asset1.jpg">
+<div class="asset-card-content">
 <h3>Stylized Hero Character</h3>
-<p>Game-ready stylized hero with animations.</p>
+<p>Fully rigged stylized hero optimized for games.</p>
+</div>
 </div>
 
-<div class="card">
+<div class="asset-card">
 <img src="asset2.jpg">
+<div class="asset-card-content">
 <h3>Fantasy NPC Pack</h3>
-<p>10 fantasy NPC characters for RPG games.</p>
+<p>Collection of RPG NPC characters ready for Unity.</p>
+</div>
 </div>
 
-<div class="card">
+<div class="asset-card">
 <img src="asset3.jpg">
+<div class="asset-card-content">
 <h3>Modular Character System</h3>
-<p>Fully customizable character system for Unity.</p>
+<p>Highly customizable character creator system.</p>
+</div>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section id="contact" class="contact">
 
 <h2>Contact</h2>
 
 <p>Email: your@email.com</p>
-
-<p>
-Unity Publisher Profile:
-<a href="#">Coming Soon</a>
-</p>
+<p>Unity Asset Store: Coming Soon</p>
 
 </section>
 
 <footer>
 
-<p>© 2026 Zxyrex</p>
+© 2026 Zxyrex Studio
 
 </footer>
 
